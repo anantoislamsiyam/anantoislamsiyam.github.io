@@ -3,19 +3,9 @@
 <head>
     <title>My Home Page</title>
     <script>
-        async function fetchHomePage() {
-    let homePageId = 10; // Your home page ID
-    let response = await fetch(`https://ais.great-site.net/wp-json/wp/v2/pages/${homePageId}`, {
-        mode: 'no-cors' // Attempt to bypass CORS
-    });
-
-    let page = await response.json();
-    document.getElementById("home").innerHTML = `
-        <h1>${page.title.rendered}</h1>
-        <div>${page.content.rendered}</div>
-    `;
-}
-window.onload = fetchHomePage;
+        let response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://ais.great-site.net/wp-json/wp/v2/pages/10')}`);
+let data = await response.json();
+let page = JSON.parse(data.contents);
     </script>
 </head>
 <body>
