@@ -5,7 +5,7 @@
     <script>
         async function fetchHomePage() {
             let homePageId = 10; // Your home page ID
-            let response = await fetch(`https://ais.great-site.net/wp-json/wp/v2/pages/${homePageId}`);
+            let response = await fetch(`https://corsproxy.io/?https://ais.great-site.net/wp-json/wp/v2/pages/10`);
             let page = await response.json();
 
             document.getElementById("home").innerHTML = `
